@@ -1,0 +1,12 @@
+#+TITLE: Desing Patterns by Mosh 
+* Memento Pattern  
+#+begin_src java 
+// Main.java 
+public class Main
+{
+  public static void main(String... arg){
+    System.out.println("hallo from emacs");
+  }
+}
+#+end_src
+
