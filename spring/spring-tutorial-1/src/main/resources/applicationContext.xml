@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- load properties file  -->
+	<context:property-placeholder  location="classpath:LiteralValues.properties" />
+
+	<!-- IOC : inversion of control  -->
+	<bean id="XYPointRC"
+		class="com.arabcoders.main.XYPoint">
+		<constructor-arg index="0" value="${pointrc.x}"/>
+		<constructor-arg index="1" value="${pointrc.y}"/>
+	</bean>
+	
+	<bean id="XYPointCR"
+		class="com.arabcoders.main.XYPoint">
+		<property name="x" value="${pointcr.x}"/>
+		<property name="y" value="${pointcr.y}"/>
+	</bean>
+	
+	<!-- DI : dependency injection via constructor 
+		 by default the scope is singleton -->
+	<bean id="Rectangle"
+		class="com.arabcoders.main.Rectangle"
+		scope="singleton"
+		init-method="init"
+		destroy-method="destroy">
+		<constructor-arg ref="XYPointRC"/>
+	</bean>
+	
+	<!-- DI : dependency injection via setter methods 
+		scope prototype : create each time a new object-->
+	<bean id="Circle"
+		class="com.arabcoders.main.Circle"
+		scope="prototype">
+		<property name="point" ref="XYPointCR"/>
+	</bean>
+	
+</beans>
