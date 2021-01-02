@@ -16,7 +16,8 @@
 		<constructor-arg index="0" value="${pointrc.x}"/>
 		<constructor-arg index="1" value="${pointrc.y}"/>
 	</bean>
-	
+
+
 	<bean id="XYPointCR"
 		class="com.arabcoders.main.XYPoint">
 		<property name="x" value="${pointcr.x}"/>

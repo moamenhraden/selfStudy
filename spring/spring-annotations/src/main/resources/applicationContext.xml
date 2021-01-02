@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- IOC, DI with xml configurations -->
+<!--
+    <bean id="MyLogger"
+          class="util.MyLogger">
+    </bean>
+
+    &lt;!&ndash; enable annotation scanning in a certain package  &ndash;&gt;
+    <bean id="moamen"
+          class="components.Student">
+        <property name="firstname" value="moamen"/>
+        <property name="lastname" value="hraden"/>
+        <property name="age" value="20"/>
+        <property name="major" value="computer science"/>
+        <property name="logger" ref="MyLogger"/>
+    </bean>
+
+    <bean id="kenan"
+          class="components.Student">
+        <constructor-arg index="0" value="kenan"/>
+        <constructor-arg index="1" value="rawashdeh"/>
+        <constructor-arg index="2" value="22"/>
+        <constructor-arg index="3" value="software engineering"/>
+        <constructor-arg index="4" ref="MyLogger"/>
+    </bean>
+-->
+
+    <!-- IOC, DI with annotations-->
+    <!-- scann packages for annotations-->
+    <context:component-scan base-package="util"/>
+    <context:component-scan base-package="components"/>
+    <context:property-placeholder location="LiteralValues.properties"/>
+
+</beans>
