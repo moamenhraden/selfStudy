@@ -1,0 +1,78 @@
+@charset "ISO-8859-1";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.container{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	background-color:#e6ebe6;
+	width:100vw;
+	min-height:100vh;
+}
+
+header{
+	width:100%;
+	text-align:center;
+	background-color: #37ad00;
+	color:white;
+	padding:10px;
+	margin-bottom:25px;
+	font-size:2rem;
+}
+
+#todo-form{
+	width:75%;
+	margin:25px;
+	display:flex;
+	justify-content: space-between;
+}
+
+.todo-input{
+	width:75%;
+	padding:25px;
+	border-radius: 25px;
+	border:none;
+	font-size:1.5rem;
+}
+
+.todo-submit{
+	width:20%;
+	background-color:#37ad00;
+	border:none;
+	border-radius: 25px;
+	font-size:1.5rem;
+	color:white;
+	cursor: pointer;
+}
+
+.todo-submit:hover{
+	box-shadow: 0 0 2px #37ad00;
+}
+
+.todo-submit:focus{
+	outline:none;	
+}
+
+.todo-input:focus{
+	outline: none;
+	box-shadow: 0 0 2px #37ad00;
+}
+
+.todolist{
+	width:75%;
+}
+
+.todoitem{
+	width:100%;
+	padding:25px;
+	margin:10px 0;
+	font-size:1.5rem;
+	background-color:#d4e820;
+	border-radius: 25px;
+	color:#757575;
+}
